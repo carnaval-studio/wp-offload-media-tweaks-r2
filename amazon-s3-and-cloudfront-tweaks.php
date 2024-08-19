@@ -86,9 +86,9 @@ class Amazon_S3_and_CloudFront_Tweaks {
 		 * Custom S3 API Example: Wasabi
 		 * @see https://wasabi.com/
 		 */
-		//add_filter( 'as3cf_aws_s3_client_args', array( $this, 'wasabi_s3_client_args' ) );
-		//add_filter( 'as3cf_aws_get_regions', array( $this, 'wasabi_get_regions' ) );
-		//add_filter( 'as3cf_aws_s3_bucket_in_path', '__return_true' );
+		add_filter( 'as3cf_aws_s3_client_args', array( $this, 'wasabi_s3_client_args' ) );
+		add_filter( 'as3cf_aws_get_regions', array( $this, 'wasabi_get_regions' ) );
+		add_filter( 'as3cf_aws_s3_bucket_in_path', '__return_true' );
 		//add_filter( 'as3cf_aws_s3_domain', array( $this, 'wasabi_domain' ) );
 		//add_filter( 'as3cf_aws_s3_console_url', array( $this, 'wasabi_s3_console_url' ) );
 
@@ -439,8 +439,8 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 * Change the "eu-central-1" region in this example to match your preferred region.
 	 */
 	public function wasabi_s3_client_args( $args ) {
-		$args['endpoint']                = 'https://s3.eu-central-1.wasabisys.com';
-		$args['region']                  = 'eu-central-1';
+		$args['endpoint']                = 'https://<Account Id.>.r2.cloudflarestorage.com';
+		$args['region']                  = 'auto';
 		$args['use_path_style_endpoint'] = true;
 
 		return $args;
@@ -470,6 +470,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 			'us-central-1'   => 'Wasabi US Central 1 (Texas)',
 			'us-east-1'      => 'Wasabi US East 1 (N. Virginia)',
 			'us-east-2'      => 'Wasabi US East 2 (N. Virginia)',
+			'auto'           => 'Automatic',			
 		);
 
 		return $regions;
