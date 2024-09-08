@@ -440,7 +440,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 */
 	public function wasabi_s3_client_args( $args ) {
 		$args['endpoint']                = 'https://<Account Id.>.r2.cloudflarestorage.com';
-		$args['region']                  = 'auto';
+		$args['region']                  = 'enam';
 		$args['use_path_style_endpoint'] = true;
 
 		return $args;
@@ -470,7 +470,11 @@ class Amazon_S3_and_CloudFront_Tweaks {
 			'us-central-1'   => 'Wasabi US Central 1 (Texas)',
 			'us-east-1'      => 'Wasabi US East 1 (N. Virginia)',
 			'us-east-2'      => 'Wasabi US East 2 (N. Virginia)',
-			'auto'           => 'Automatic',			
+			'wnam'           => 'Western North America',
+			'enam'           => 'Eastern North America',
+			'weur'           => 'Western Europe',
+			'eeur'           => 'Eastern Europe',
+			'apac'           => 'Asia-Pacific',
 		);
 
 		return $regions;
