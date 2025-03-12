@@ -740,6 +740,8 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 *
 	 * This example makes primary file for every newly offloaded Media Library object private in the bucket.
 	 *
+	 * @handles `as3cf_upload_object_key_as_private`
+	 *
 	 * @param bool   $is_private Should the object be private?
 	 * @param string $object_key A unique file identifier for a composite item, e.g. image's "size" such as full, small, medium, large.
 	 * @param Item   $as3cf_item The item being uploaded.
@@ -763,6 +765,8 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 * with an uploaded item before it's uploaded to the provider.
 	 *
 	 * This example makes every newly offloaded object private in the bucket.
+	 *
+	 * @handles `as3cf_upload_object_key_as_private`
 	 *
 	 * @param bool $is_private Should the object be private?
 	 *
@@ -1051,7 +1055,6 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 * Note: Runs later than `as3cf_get_attachment_url`
 	 */
 	public function wp_get_attachment_url( $url, $post_id ) {
-
 		return $url;
 	}
 
